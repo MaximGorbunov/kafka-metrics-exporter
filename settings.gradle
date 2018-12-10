@@ -1,0 +1,5 @@
+rootProject.name = 'metrics-starter'
+
+include 'metrics-spring-boot-autoconfigure'
+include 'metrics-spring-boot-starter'
+include 'kafka-metrics'
