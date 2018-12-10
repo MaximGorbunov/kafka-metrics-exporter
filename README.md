@@ -2,13 +2,13 @@
 Spring boot starter предназначенный для отправки метрик в приложений
 Доработка [spring-cloud-stream](https://github.com/spring-cloud/spring-cloud-stream)
 
-#Подключение
+# Подключение
 Как начать отправлять метрики в кафку? 
-##1. Подключить стартер
+## 1. Подключить стартер
 ```$xslt
 compile com.mgorbunov:spring-boot-metrics-starter:0.0.1'
 ```
-##2. Добавить конфиги
+## 2. Добавить конфиги
 - в config server добавляем:
 ```
 spring:
