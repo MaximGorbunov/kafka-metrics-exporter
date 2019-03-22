@@ -1,4 +1,4 @@
-rootProject.name = 'metrics-starter'
+rootProject.name = 'kafka-metrics-starter'
 
 include 'metrics-spring-boot-autoconfigure'
 include 'metrics-spring-boot-starter'
