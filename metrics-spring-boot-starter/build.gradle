@@ -12,6 +12,10 @@ bintray {
         repo = 'com.mgorbunov'
         userOrg = 'mgorbunov'
         licenses = ['Apache-2.0']
+        name=rootProject.name
+        websiteUrl = "https://github.com/MaximGorbunov/kafka-metrics-starter"
+        issueTrackerUrl = "https://github.com/MaximGorbunov/kafka-metrics-starter/issues"
+        vcsUrl = "https://github.com/MaximGorbunov/kafka-metrics-starter.git"
         publicDownloadNumbers = true
         attributes = [:]
         version {
