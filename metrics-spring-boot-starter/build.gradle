@@ -1,3 +1,26 @@
+apply plugin: "nebula.nebula-bintray-publishing"
+apply plugin: 'nebula.maven-publish'
+
+bintray {
+    user = project.findProperty('bintray_user')
+    key = project.findProperty('bintray_key')
+
+    publications = ['nebula']
+    dryRun = false
+    publish = true
+    pkg {
+        repo = 'com.mgorbunov'
+        userOrg = 'mgorbunov'
+        licenses = ['Apache-2.0']
+        publicDownloadNumbers = true
+        attributes = [:]
+        version {
+            name = project.version
+            vcsTag = project.version
+            attributes = [:]
+        }
+    }
+}
 dependencies {
     compile project(':metrics-spring-boot-autoconfigure')
 }

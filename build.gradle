@@ -6,21 +6,19 @@ buildscript {
         jcenter()
     }
     dependencies {
-        classpath "org.jfrog.buildinfo:build-info-extractor-gradle:4.8.1"
+        classpath "com.netflix.nebula:nebula-bintray-plugin:5.0.0"
         classpath 'com.netflix.nebula:nebula-release-plugin:8.0.3'
-        classpath 'com.netflix.nebula:nebula-publishing-plugin:8.1.0'
-        classpath 'com.netflix.nebula:gradle-info-plugin:4.0.3'
-        classpath 'com.netflix.nebula:nebula-project-plugin:5.0.0'
+        classpath "com.netflix.nebula:nebula-publishing-plugin:7.1.0"
         classpath "org.springframework.boot:spring-boot-gradle-plugin:${springBootVersion}"
     }
 }
+
+//apply plugin: 'nebula.nebula-bintray'
+
 allprojects {
+    apply plugin: 'nebula.release'
     apply plugin: 'java'
     apply plugin: 'idea'
-    apply plugin: 'nebula.release'
-    apply plugin: 'nebula.project'
-    apply plugin: 'com.jfrog.artifactory'
-    apply plugin: 'nebula.maven-publish'
     apply plugin: 'io.spring.dependency-management'
 
     group = 'com.mgorbunov'
@@ -45,24 +43,7 @@ allprojects {
     }
 
     dependencies {
-        compileOnly 'org.projectlombok:lombok'
-        annotationProcessor 'org.projectlombok:lombok'
-    }
-
-    artifactory {
-        publish {
-            contextUrl = project.findProperty('artifactory_contextUrl')
-            repository {
-                repoKey = project.extractRepo(version.toString())
-                username = project.findProperty('artifactory_user')
-                password = project.findProperty('artifactory_password')
-                maven = true
-            }
-            defaults {
-                publications('nebula')
-                publishArtifacts = true
-                publishPom = false
-            }
-        }
+        compileOnly 'org.projectlombok:lombok:1.18.6'
+        annotationProcessor 'org.projectlombok:lombok:1.18.6'
     }
 }
