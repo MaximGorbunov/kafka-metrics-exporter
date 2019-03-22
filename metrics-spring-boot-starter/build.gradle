@@ -25,6 +25,15 @@ bintray {
         }
     }
 }
+
+publishing {
+    publications {
+        nebula(MavenPublication) {
+            artifactId 'kafka-metrics-starter'
+        }
+    }
+}
+
 dependencies {
     compile project(':metrics-spring-boot-autoconfigure')
 }
